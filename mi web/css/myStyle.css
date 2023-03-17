@@ -1,0 +1,25 @@
+#encabezado{
+    color:red;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+}
+
+
+img{
+    height: 200px;
+    width: 200px;
+}
+
+
+p{
+    font-weight: bolder;
+}
+
+
+.contenedor{
+    border:solid red;
+    display: flex;
+    flex-direction: column;
+    
+}
+
