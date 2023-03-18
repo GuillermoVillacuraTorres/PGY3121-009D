@@ -1,0 +1,81 @@
+.contenedorHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    background-color: rgb(222, 213, 213);
+}
+
+
+.contenedorHeader h3{
+    padding-right: 15px;
+    color: red;
+}
+
+.contenedorHeader a{
+    text-decoration: none;
+}
+
+.contenedorHeader h3:hover{
+    color: blue;
+}
+
+.contenedorFooter{
+    width: 100%;
+    
+    background-color: rgb(222, 213, 213);
+    display: flex;
+    flex-direction: row;
+}
+
+.miniBox{
+    width: 33.3%;
+    
+    padding: 30px;
+    text-align: justify;
+}
+
+.box img{
+    width: 25px;
+    height: 25px;
+    padding-right: 15px
+}
+
+.box{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.box a{
+    text-decoration: none;
+}
+
+.box h3{
+    color:red;
+}
+
+.box h3:hover{
+    color:blue;
+}
+
+.boxIcon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.boxIcon i{
+    padding-right: 10px;
+}
+
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+
+.contenedor{
+    padding-left: 200px;
+    padding-right: 200px;
+}
