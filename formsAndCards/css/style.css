@@ -1,0 +1,26 @@
+@font-face{
+    font-family: miFuente;
+    src: url('fonts/DaisukyFancy.otf');
+}
+
+h1{
+    font-family: miFuente;
+    font-size: 150px;
+}
+
+
+.bg-miColor{
+    background-color: aqua;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 700px;
+}
+
+.contenedor{
+    min-height: 200PX;
+    min-width: 200px;
+}
