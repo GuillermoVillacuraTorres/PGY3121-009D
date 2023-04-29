@@ -55,6 +55,8 @@ function valor(){
 function load(){
     region();
     api();
+    cargarRegion();
+    
 }
 
 
@@ -76,3 +78,44 @@ function api(){
             uf.innerHTML += data.uf.valor;
         })
 }
+
+
+function cargarRegion(){
+    fetch('http://142.44.241.162:9565/location/region')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        const select = document.getElementById("cmbRegionApi");
+
+        for (const i of data.data) {
+            const option = document.createElement("option");
+            option.value = i.idregion;
+            option.textContent = i.nombreregion;
+            select.appendChild(option);
+        }
+
+    })
+}
+
+function cargarComuna(){
+    let regionSel = document.getElementById("cmbRegionApi").value;
+    fetch('http://142.44.241.162:9565/location/comuna?parRegionId='+regionSel)
+    .then(response => response.json())
+    .then(data => {
+        
+
+        console.log(data);
+        const select = document.getElementById("cmbComunaApi");
+        document.getElementById("cmbComunaApi").innerHTML = "";
+        for (const i of data.data) {
+            const option = document.createElement("option");
+            option.value = i.idcomuna;
+            option.textContent = i.nombrecomuna;
+            select.appendChild(option);
+        }
+
+    })
+
+
+}
+
