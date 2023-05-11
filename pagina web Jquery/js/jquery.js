@@ -39,10 +39,33 @@ $("#btnValor").on("click", function(){
 
 })
 
-
+/* 
 setInterval(function(){
     $("#contenedor").animate({marginLeft: "700px"});
 $("#contenedor").animate({marginTop: "200px"});
 $("#contenedor").animate({marginLeft: "0px"});
 $("#contenedor").animate({marginTop: "0px"});
 },1000)
+ */
+
+
+$(function(){
+    $("#miFormulario").validate({
+        rules:{
+            txtRut:{
+                required:true,
+                minlength:5
+            },
+            txtNombre:{
+                required:true
+            }
+        },
+        messages:{
+            txtRut:{
+                required: "El rut es un campo obligatorio.",
+                minlength: "El minimo de caracteres es 5."
+            }
+        }
+        
+    })
+})
