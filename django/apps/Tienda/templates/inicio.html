@@ -1,5 +1,14 @@
 {% extends "./base.html" %}
 
+{% load static %}
+
 {% block body %}
-    <h1>Esta es mi web con Django!</h1>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <div class="container">
+        <h1>Esta es mi web con Django!</h1>
+    </div>
+    
+
+    <script src="{% static 'js/funciones.js' %}"></script>
 {% endblock %}
