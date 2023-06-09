@@ -6,8 +6,9 @@
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <div class="container">
-        <div class="row">
-            {% for p in producto %}
+        <div class="row mt-5">
+            <h2>Árbol</h2>
+            {% for p in cate_arbol %}
             <div class="col">
                 <div class="card" style="width: 18rem;">
                     <img src="{{p.imagenUrl}}" class="card-img-top" alt="...">
@@ -20,6 +21,26 @@
             </div>
             {% endfor %}
         </div>
+
+
+
+        <div class="row mt-5">
+            <h2>Jardinería</h2>
+            {% for p in cate_jardineria %}
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{p.imagenUrl}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{p.nombre}}</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+            </div>
+            {% endfor %}
+        </div>
+
+
     </div>
     
 
