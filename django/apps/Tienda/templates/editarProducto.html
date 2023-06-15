@@ -1,0 +1,57 @@
+{% extends './base.html' %}
+
+{% block body %}
+    <h1>Editar producto</h1>
+
+    <div class="container">
+        <form action="/agregarProductoForm" method="POST" enctype="multipart/form-data">{% csrf_token %}
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="txtSku">SKU:</label>
+                    <input readonly value="{{prod.sku}}" name="txtSku" id="txtSku" type="text" class="form-control">
+                </div>
+
+                <div class="col-md-8">
+                    <label for="txtnombre">Nombre:</label>
+                    <input value="{{prod.nombre}}" name="txtnombre" id="txtnombre" type="text" class="form-control">
+                </div>
+
+                <div class="col-md-4">
+                    <label for="txtprecio">Precio:</label>
+                    <input value="{{prod.precio}}" name="txtprecio" id="txtprecio" type="text" class="form-control">
+                </div>
+
+
+                <div class="col-md-4">
+                    <label for="txtStock">Stock:</label>
+                    <input value="{{prod.stock}}" name="txtStock" id="txtStock" type="text" class="form-control">
+                </div>
+
+                <div class="col-md-4">
+                    <label for="cmbCategoria">Categoria:</label>
+                    <select id="cmbCategoria" name="cmbCategoria" class="form-select" aria-label="Default select example">
+                        <option disabled selected>Seleccione</option>
+                        {% for c in cate %}
+                        <option value="{{c.id_categoria}}">{{c.nombre_categoria}}</option>
+                        {% endfor %}
+                      </select> 
+                </div>
+
+                <div class="col-md-12">
+                    <label for="txtDescripcion">Descripcion:</label>
+                    <input value="{{prod.descripcion}}" name="txtDescripcion" id="txtDescripcion" type="text" class="form-control">
+                </div>
+
+
+
+                <div class="col-md-12">
+                    <label for="txtImagen">Imagen:</label>
+                    <img src="{{prod.imagenUrl.url}}" height="100" alt="">
+                    <input name="txtImagen" id="txtImagen" type="file" class="form-control">
+                </div>
+            </div>
+            <button class="btn btn-success mt-5 w-100">Editar producto</button>
+        </form>
+    </div>
+
+    {% endblock %}

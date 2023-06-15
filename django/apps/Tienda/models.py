@@ -1,9 +1,6 @@
 from django.db import models
 
 # Create your models here.
-
-
-
 class Categoria(models.Model):
     id_categoria = models.IntegerField(primary_key=True)
     nombre_categoria = models.CharField(max_length=22)
@@ -20,7 +17,7 @@ class Producto(models.Model):
     stock = models.IntegerField()
     fecha = models.DateField(auto_now_add=True)
     descripcion = models.CharField(max_length=120)
-    imagenUrl = models.CharField(max_length=200)
+    imagenUrl = models.ImageField(upload_to="imagenesProducto")
     categoriaId = models.ForeignKey(Categoria, on_delete=models.CASCADE)
 
     def __str__(self):

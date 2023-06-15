@@ -6,5 +6,7 @@ urlpatterns = [
     path('agregarProducto',views.cargarAgregarProducto),
 
 
-    path('agregarProductoForm',views.agregarProducto)
+    path('agregarProductoForm',views.agregarProducto),
+
+    path('editarProducto/<sku>',views.cargarEditarProducto)
 ]

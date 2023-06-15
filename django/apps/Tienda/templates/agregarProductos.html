@@ -4,7 +4,7 @@
     <h1>Agregar productos</h1>
 
     <div class="container">
-        <form action="/agregarProductoForm" method="POST">{% csrf_token %}
+        <form action="/agregarProductoForm" method="POST" enctype="multipart/form-data">{% csrf_token %}
             <div class="row">
                 <div class="col-md-4">
                     <label for="txtSku">SKU:</label>
@@ -46,11 +46,43 @@
 
                 <div class="col-md-12">
                     <label for="txtImagen">Imagen:</label>
-                    <input name="txtImagen" id="txtImagen" type="text" class="form-control">
+                    <input name="txtImagen" id="txtImagen" type="file" class="form-control">
                 </div>
             </div>
             <button class="btn btn-success mt-5 w-100">Agregar producto</button>
         </form>
+    </div>
+
+    <div class="container mt-5">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">SKU</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Opciones</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for p in prod %}
+              <tr>
+                <th scope="row">{{p.sku}}</th>
+                <td><img src="{{p.imagenUrl.url}}" alt="" height="50"></td>
+                <td>{{p.nombre}}</td>
+                <td>{{p.precio}}</td>
+                <td>{{p.descripcion}}</td>
+                <td>{{p.categoriaId.nombre_categoria}}</td>
+                <td>{{p.stock}}</td>
+                <td><a href="editarProducto/{{p.sku}}" class="btn btn-primary">Editar</a></td>
+                <td><a href="" class="btn btn-danger">Eliminar</a></td>
+              </tr>
+                {% endfor %}
+            </tbody>
+          </table>
     </div>
 
 {% endblock %}
