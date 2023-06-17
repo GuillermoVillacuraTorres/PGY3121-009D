@@ -4,7 +4,7 @@
     <h1>Editar producto</h1>
 
     <div class="container">
-        <form action="/agregarProductoForm" method="POST" enctype="multipart/form-data">{% csrf_token %}
+        <form action="/editarProducto" method="POST" enctype="multipart/form-data">{% csrf_token %}
             <div class="row">
                 <div class="col-md-4">
                     <label for="txtSku">SKU:</label>
@@ -32,7 +32,7 @@
                     <select id="cmbCategoria" name="cmbCategoria" class="form-select" aria-label="Default select example">
                         <option disabled selected>Seleccione</option>
                         {% for c in cate %}
-                        <option value="{{c.id_categoria}}">{{c.nombre_categoria}}</option>
+                        <option value="{{c.id_categoria}}" {% if c.id_categoria == prod.categoriaId.id_categoria %} selected {% endif %} >{{c.nombre_categoria}}</option>
                         {% endfor %}
                       </select> 
                 </div>
