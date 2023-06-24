@@ -1,10 +1,12 @@
 {% extends './base.html' %}
 
+{% load static %}
+
 {% block body %}
     <h1>Agregar productos</h1>
 
     <div class="container">
-        <form action="/agregarProductoForm" method="POST" enctype="multipart/form-data">{% csrf_token %}
+        <form id="formAgregar" action="/agregarProductoForm" method="POST" enctype="multipart/form-data">{% csrf_token %}
             <div class="row">
                 <div class="col-md-4">
                     <label for="txtSku">SKU:</label>
@@ -85,4 +87,8 @@
           </table>
     </div>
 
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'js/agregarProductoForm.js' %}"></script>
 {% endblock %}
